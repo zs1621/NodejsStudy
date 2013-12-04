@@ -1,0 +1,9 @@
+http_load -p 20 -s 60  url.txt 
+101083 fetches, 20 max parallel, 6.46931e+06 bytes, in 60 seconds
+64 mean bytes/connection
+1684.72 fetches/sec, 107822 bytes/sec
+msecs/connect: 0.0647054 mean, 2.944 max, 0.017 min
+msecs/first-response: 11.5598 mean, 70.776 max, 4.345 min
+HTTP response codes:
+  code 200 -- 101083
+

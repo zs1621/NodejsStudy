@@ -12,7 +12,7 @@ var pool = poolModule.Pool({
     destroy: function(db) { db.close(); },
     max: 10,
     idleTimeoutMillis: 30000,
-    log: false
+    log: true 
 });
 
 var server = http.createServer( function(req, res) {
@@ -21,7 +21,7 @@ var server = http.createServer( function(req, res) {
             res.statusCode = 500; 
             res.end(JSON.stringify(err, null, 2));
         } else {
-            db.collection('foo').save({test: 2}, function(err, result) {
+            db.collection('foos').findOne({test: 2}, function(err, result) {
                 res.end(JSON.stringify(result, null, 2)); 
                 pool.release(db);
             }); 
