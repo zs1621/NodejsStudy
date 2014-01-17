@@ -2,7 +2,7 @@ var http = require('http');
 var mongodb = require('mongodb');
 
 var server = http.createServer( function(req, res) {
-        mongodb.MongoClient.connect('mongodb://localhost/test', {server: {poolSize: 10}}, function(err, db) {
+        mongodb.MongoClient.connect('mongodb://localhost/test', function(err, db) {
         if (err) {
             res.statusCode = 500; 
             res.end(JSON.stringify(err, null, 2));
