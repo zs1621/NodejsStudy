@@ -69,4 +69,60 @@ MyClass.prototype.myMethod = function() {
     }
 ```
 
+### 使用 `properitesObject` 元素
 
+```
+var o;
+// create an object with null as prototype
+o = Ojbect.create(null);
+
+o = {};
+// is equivalent to:
+o = Object.create(Ojbect.prototype);
+
+// 下面的例子举了几个简单的属性
+o = Object.create(Object.prototpe, {
+    foo: { writable: true, configurable: true, value: "hello"},
+    bar: {
+        configurable: false,
+        get: function() { return 10 },
+        set: function(value) { console.log("Setting ``");}
+        }
+    });
+
+function Constructor(){
+    o = new Constructor();
+    }
+
+// is equivalent to:
+o = Object.create(Constructor.prototype);
+// 当然， 如果
+
+// 创建一个新的对象其属性是一个新的空的对象
+// 加一个唯一的属性 p , 其值为42
+
+
+o = Ojbect.create({}, {p: { value: 42}})
+
+//默认属性是 不可写， 不可枚举， 不可设置的
+o.p = 24;
+o.p # 42
+o.q = 12
+for (var prop in o) {
+   console.log(prop) 
+    }
+
+// "q"
+
+o2 = Object.create({}, {
+    p: {
+       value: 42, 
+       writable: true,
+       enumerable: true,
+       configurable: true
+        } 
+    });
+```
+
+##**Polyfill**
+TBC
