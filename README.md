@@ -9,3 +9,7 @@
 --
 
 2014/1/17 add javascript-syntax
+
+--
+
+2014/1/22 add javascript regex notes
