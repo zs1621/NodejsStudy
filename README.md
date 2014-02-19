@@ -13,3 +13,7 @@
 --
 
 2014/1/22 add javascript regex notes
+
+--
+
+2014/2/20 add harmony dir( javascrip newest experimental character)
