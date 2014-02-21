@@ -54,5 +54,15 @@ boundGetX(); // 81
     2. 参数使用
 
 ```
+function list() {
+   return Array.prototype.slice.call(arguments); 
+    };
 
+var list1 = list(1, 2, 3);
+
+var leadingThirtysevenList = list.bind(undefined, 37);// 37 就作为调用时的第一个参数 
+
+
+var list2 = leadingThirtysevenList(); // [37]
+var list3 = leadingThirtysevenList(1, 2, 3); // [37, 1, 2, 3], 1, 2, 3就作为第二，三， 四个参数
 ```
