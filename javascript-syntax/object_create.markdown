@@ -61,8 +61,7 @@ function MyClass() {
     }
 
 MyClass.prototype = Object.create(SuperClass.prototype); //inherit
-mixin(MyClass.prototype, OtherSuperClass.prototype); //mixin \
-[http://www.cnblogs.com/snandy/archive/2013/05/24/3086663.html]
+mixin(MyClass.prototype, OtherSuperClass.prototype); //mixin [http://www.cnblogs.com/snandy/archive/2013/05/24/3086663.html]
 
 MyClass.prototype.myMethod = function() {
    // do a thing 
@@ -76,9 +75,11 @@ var o;
 // create an object with null as prototype
 o = Ojbect.create(null);
 
+
 o = {};
 // is equivalent to:
 o = Object.create(Ojbect.prototype);
+
 
 // 下面的例子举了几个简单的属性
 o = Object.create(Object.prototpe, {
