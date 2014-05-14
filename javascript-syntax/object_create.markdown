@@ -42,7 +42,7 @@ function Rectangle(){
 
 // subclass extends superclass
 
-Rectangle.prototype = Object.create(Shape.prototype)
+Rectangle.prototype = Object.create(Shape.prototype);  // 这与`Rectangle.prototype = Shape.prototype`有什么区别--
 Rectangle.prototype.constructor = Rectangle;
 
 var rect = new Rectangle();

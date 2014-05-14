@@ -33,3 +33,33 @@ var obj = {
 // 输出 
 console.log(only(obj, 'name last email'))
 
+// Shape- superclass
+function Shape(){
+    this.x = 0; 
+    this.y = 0;
+}
+
+// superclass method
+Shape.prototype.move = function (x, y) {
+    this.x += x; 
+    this.y += y;
+    console.info("Shape moved");
+    } 
+
+// Rectangle - subclass
+function Rectangle(){
+   Shape.call(this); // call superclass construtor 
+    }
+
+// subclass extends superclass
+
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+
+var rect = new Rectangle();
+
+console.log(rect instanceof Rectangle);
+console.log(rect instanceof Shape);
+console.log(rect.constructor);
+rect.move(1, 1);
+
