@@ -68,6 +68,39 @@ MyClass.prototype.myMethod = function() {
     }
 ```
 
+### Object.create(null)
+
+ - 传入null给Object.create, 可以创建没有继承任何东西的对象。
+
+
+```
+function Shape() {
+}
+
+Shape.prototype = Object.create(null);
+
+var shape = new Shape();
+
+// 输出 "undefined"
+console.log(shape.toString);
+```
+
+ - 注意上面的例子不同于下面的 :
+
+
+```
+function Shape() {
+};
+Shape.prototype = null;
+var shape = new Shape();
+// 输出 "[Function: toString]"
+console.log(shape.toString);
+```
+
+ - 当然你会想， 为毛这样用? 
+   - 可以避免[问题](http://www.devthought.com/2012/01/18/an-object-is-not-a-hash/)
+   - 性能问题。Object.create(null)比对象遍历更快。
+
 ### 使用 `properitesObject` 元素
 
 ```
